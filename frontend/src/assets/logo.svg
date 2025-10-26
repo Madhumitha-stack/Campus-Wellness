@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <!-- Brain with graduation cap -->
+    <g fill="none" stroke="#4a90e2" stroke-width="3">
+        <!-- Graduation Cap -->
+        <path d="M50,70 L150,70 L100,40 Z" fill="#4a90e2"/>
+        <rect x="90" y="70" width="20" height="15" fill="#4a90e2"/>
+        
+        <!-- Brain curves -->
+        <path d="M60,90 C60,50 140,50 140,90" stroke="#34495e"/>
+        <path d="M70,100 C70,70 130,70 130,100" stroke="#34495e"/>
+        <path d="M80,110 C80,90 120,90 120,110" stroke="#34495e"/>
+        
+        <!-- Connecting lines representing mental connections -->
+        <path d="M90,95 L110,95" stroke="#2ecc71"/>
+        <path d="M85,105 L115,105" stroke="#2ecc71"/>
+        <path d="M80,115 L120,115" stroke="#2ecc71"/>
+    </g>
+    
+    <!-- Heart symbol for wellness -->
+    <path d="M95,130 C90,125 80,125 75,130 C70,135 70,145 75,150 L100,175 L125,150 C130,145 130,135 125,130 C120,125 110,125 105,130 L100,135 L95,130" fill="#e74c3c"/>
+</svg>

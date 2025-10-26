@@ -141,6 +141,7 @@ app.get('/api/game/leaderboard', (req, res) => {
   res.json(leaderboard);
 });
 
+// Enhanced Safe Spaces endpoint
 app.get('/api/safe-spaces', (req, res) => {
   const safeSpaces = [
     {
@@ -150,8 +151,82 @@ app.get('/api/safe-spaces', (req, res) => {
       location: { lat: 40.7589, lng: -73.9851 },
       hours: "9AM-5PM Mon-Fri",
       phone: "+1-555-0123",
-      accessibility: ["wheelchair", "quiet_room"],
-      description: "Professional mental health services"
+      accessibility: ["wheelchair", "quiet_room", "asl_interpreter"],
+      description: "Professional mental health services and counseling. Licensed therapists provide individual and group sessions.",
+      services: ["Individual Therapy", "Group Counseling", "Crisis Intervention"],
+      emergency: false,
+      distance: "0.2 miles",
+      building: "Student Services Building, Room 201"
+    },
+    {
+      id: 2,
+      name: "Student Wellness Garden",
+      type: "outdoor",
+      location: { lat: 40.7590, lng: -73.9845 },
+      hours: "24/7",
+      phone: null,
+      accessibility: ["wheelchair", "braille_signs", "sensory_friendly"],
+      description: "Peaceful outdoor space for relaxation and meditation. Features walking paths, benches, and quiet zones.",
+      services: ["Meditation Areas", "Walking Paths", "Quiet Zones"],
+      emergency: false,
+      distance: "0.1 miles",
+      building: "Behind Library"
+    },
+    {
+      id: 3,
+      name: "Peer Support Lounge",
+      type: "peer_support",
+      location: { lat: 40.7580, lng: -73.9860 },
+      hours: "10AM-8PM Daily",
+      phone: "+1-555-0124",
+      accessibility: ["wheelchair", "large_text", "assistive_listening"],
+      description: "Casual space for student peer support and socializing. Trained peer supporters available.",
+      services: ["Peer Support", "Social Events", "Study Groups"],
+      emergency: false,
+      distance: "0.3 miles",
+      building: "Student Union, Room 105"
+    },
+    {
+      id: 4,
+      name: "24/7 Crisis Center",
+      type: "emergency",
+      location: { lat: 40.7575, lng: -73.9855 },
+      hours: "24/7",
+      phone: "+1-555-0199",
+      accessibility: ["wheelchair", "asl_interpreter", "quiet_room"],
+      description: "Immediate mental health support for urgent situations. No appointment needed.",
+      services: ["Crisis Counseling", "Emergency Support", "Safety Planning"],
+      emergency: true,
+      distance: "0.4 miles",
+      building: "Health Center Annex"
+    },
+    {
+      id: 5,
+      name: "Mindfulness Meditation Room",
+      type: "quiet",
+      location: { lat: 40.7585, lng: -73.9840 },
+      hours: "6AM-10PM Daily",
+      phone: null,
+      accessibility: ["sensory_friendly", "quiet_room", "wheelchair"],
+      description: "Dedicated silent space for meditation and mindfulness practice. Cushions and guides provided.",
+      services: ["Meditation", "Mindfulness", "Yoga"],
+      emergency: false,
+      distance: "0.2 miles",
+      building: "Wellness Center, Room 305"
+    },
+    {
+      id: 6,
+      name: "Student Health Center",
+      type: "professional",
+      location: { lat: 40.7570, lng: -73.9865 },
+      hours: "8AM-6PM Mon-Sat",
+      phone: "+1-555-0125",
+      accessibility: ["wheelchair", "assistive_listening", "large_text"],
+      description: "Comprehensive health services including mental health assessments and referrals.",
+      services: ["Health Assessments", "Medication Management", "Referrals"],
+      emergency: false,
+      distance: "0.3 miles",
+      building: "Health Sciences Building"
     }
   ];
   
@@ -181,4 +256,5 @@ app.listen(PORT, () => {
   console.log(`🚀 Backend running on port ${PORT}`);
   console.log(`✅ Health check: http://localhost:${PORT}/health`);
   console.log(`✅ API ready: http://localhost:${PORT}/api`);
+  console.log(`📍 Safe spaces: http://localhost:${PORT}/api/safe-spaces`);
 });

@@ -6,6 +6,7 @@ import GameHub from './components/GameHub';
 import SafeSpaces from './components/SafeSpaces';
 import Dashboard from './components/Dashboard';
 import AccessibilityPanel from './components/AccessibilityPanel';
+import logo from './assets/logo.svg';
 
 function App() {
   const [currentView, setCurrentView] = useState('dashboard');
@@ -79,17 +80,22 @@ function App() {
       }`}>
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            <motion.h1 
-              className={`text-2xl font-bold ${
-                accessibilitySettings.highContrast 
-                  ? 'text-black' 
-                  : 'text-mental-blue'
-              }`}
+            <motion.div 
+              className="flex items-center gap-3"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
             >
-              🌱 Campus Mental Health Hub
-            </motion.h1>
+              <img src={logo} alt="Campus Mental Health Logo" className="h-8 w-8" />
+              <h1 
+                className={`text-2xl font-bold ${
+                  accessibilitySettings.highContrast 
+                    ? 'text-black' 
+                    : 'text-mental-blue'
+                }`}
+              >
+                Campus Mental Health Hub
+              </h1>
+            </motion.div>
             
             {user && (
               <div className="flex items-center space-x-4">
