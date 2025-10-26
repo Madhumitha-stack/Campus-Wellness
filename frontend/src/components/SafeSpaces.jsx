@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import axios from 'axios';
 
 const API_URL = process.env.NODE_ENV === 'production'
-  ? 'https://your-backend.up.railway.app'
-  : 'http://localhost:3000';
+  ? 'https://campus-mental-health-api.up.railway.app'  // Update this with your actual Railway backend URL
+  : '';
 
 const SafeSpaces = ({ accessibility }) => {
   const [safeSpaces, setSafeSpaces] = useState([]);
