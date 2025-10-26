@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import axios from 'axios';
 
+const API_URL = process.env.NODE_ENV === 'production'
+  ? 'https://your-backend.up.railway.app'
+  : 'http://localhost:3000';
+
 const SafeSpaces = ({ accessibility }) => {
   const [safeSpaces, setSafeSpaces] = useState([]);
   const [selectedSpace, setSelectedSpace] = useState(null);
@@ -77,7 +81,7 @@ const SafeSpaces = ({ accessibility }) => {
     try {
       setLoading(true);
       // Try to fetch from backend first
-      const response = await axios.get('/api/safe-spaces');
+      const response = await axios.get(`${API_URL}/api/safe-spaces`);
       setSafeSpaces(response.data);
       setError(null);
     } catch (error) {
